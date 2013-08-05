@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @movie.name %>
+</p>
+
+<p>
+  <b>Stars:</b>
+  <%= @movie.stars %>
+</p>
+
+<p>
+  <b>Release date:</b>
+  <%= @movie.release_date %>
+</p>
+
+<p>
+  <b>Story line:</b>
+  <%= @movie.story_line %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @movie.duration %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @movie.language %>
+</p>
+<h2>Show Times</h2>
+<% @movie.showtimes.each do |st| %>
+<p><%= st.show_time.strftime("%I:%M %p") %></p>
+<% end %>
+<h2>Reviews</h2>
+<%= link_to "Add More Reviews", new_review_path %>
+<% @movie.reviews.each do |review| %>
+<p>
+  <% review.rating.times do %>
+    <%= image_tag "rating.jpg", size:"25x25" %>
+  <% end %>
+</p>
+<p><%= "#{review.user} | #{review.review_date}" %></p>
+<p style="border-bottom:thin dotted black;"></p>
+<% end %>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

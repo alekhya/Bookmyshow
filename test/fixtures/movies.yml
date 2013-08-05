@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  stars: MyString
+  release_date: 2013-08-05
+  story_line: MyString
+  duration: MyString
+  language: MyString
+
+two:
+  name: MyString
+  stars: MyString
+  release_date: 2013-08-05
+  story_line: MyString
+  duration: MyString
+  language: MyString

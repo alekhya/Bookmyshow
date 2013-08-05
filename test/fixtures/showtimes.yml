@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  show_time: 2013-08-05 14:48:11
+  start_date: 2013-08-05
+  end_date: 2013-08-05
+  price: 1
+  movie_id: 1
+
+two:
+  show_time: 2013-08-05 14:48:11
+  start_date: 2013-08-05
+  end_date: 2013-08-05
+  price: 1
+  movie_id: 1

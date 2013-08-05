@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookmyshow</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div>
+<%= link_to image_tag("BMS_logo.png"), movies_path %>
+</div>
+<div style="text-align:right">
+<% if user_signed_in? %>
+	<%= link_to image_tag("logout.jpg" , size:"40x40"), destroy_user_session_path, method: "delete" %>
+<% else %>
+	<%= link_to image_tag("login.png", size:"40x40"), new_user_session_path %>
+<% end %>
+</div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<p style="border-bottom: thick outset black"></p>
+
+<%= yield %>
+</body>
+</html>

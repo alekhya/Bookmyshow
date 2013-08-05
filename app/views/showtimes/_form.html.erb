@@ -1,0 +1,37 @@
+<%= form_for(@showtime) do |f| %>
+  <% if @showtime.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@showtime.errors.count, "error") %> prohibited this showtime from being saved:</h2>
+
+      <ul>
+      <% @showtime.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :show_time %><br />
+    <%= f.datetime_select :show_time %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br />
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :movie_id %><br />
+    <%= f.collection_select :movie_id, Movie.all, :id, :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

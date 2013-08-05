@@ -1,0 +1,31 @@
+<h1>Listing showtimes</h1>
+
+<table>
+  <tr>
+    <th>Show time</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Price</th>
+    <th>Movie</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @showtimes.each do |showtime| %>
+  <tr>
+    <td><%= showtime.show_time %></td>
+    <td><%= showtime.start_date %></td>
+    <td><%= showtime.end_date %></td>
+    <td><%= showtime.price %></td>
+    <td><%= showtime.movie_id %></td>
+    <td><%= link_to 'Show', showtime %></td>
+    <td><%= link_to 'Edit', edit_showtime_path(showtime) %></td>
+    <td><%= link_to 'Destroy', showtime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Showtime', new_showtime_path %>
