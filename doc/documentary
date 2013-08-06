@@ -1,0 +1,55 @@
+Javascript:
+1) onclick function
+	var logo_image = document.getElementById("logo");
+	logo_image.onclick = function() {
+		alert("you clicked the image");
+	};
+2) onfocus and onblur
+onfocus: getting into tab and onblur: leaving out of tab.
+	var com = document.getElementById("comment");
+	com.onfocus = function() {
+		if (com.value == "Please enter comments") {
+			com.value = "";
+		}
+	}
+	com.onblur = function() {
+		if (com.value == "") {
+			com.value = "Please enter comments";
+		}
+	}
+3) Window.onload
+window.onload {
+function1();
+function2();
+}
+4) SetTimeout
+5) setInterval(changeimage,5000)
+	var event_image = document.getElementById("movies_list");
+	var event_image_array = ["/assets/conjuring.jpg", "/assets/smurfs.jpg", 	/assets/zambezia.jpg", "/assets/chennai_express.jpg"]
+	var index = 0;
+	function changeImage(){
+		event_image.setAttribute("src", event_image_array[index]);
+		index ++;
+		if (index >= event_image_array.length){
+			index=0;
+		}
+	}
+	setInterval(changeImage, 5000);
+5) clearInterval
+	var intervalhandler = setInterval(changeImage, 5000);
+	event_image.onclick = function(){
+		clearInterval(intervalhandler);
+	}
+Debugging
+1) what kind of errors will face in javascript
+2) Which browser will help us in debuging very well.
+3) How to debug(like puting breakpoints/continue/step into/step out)
+Enhancing forms with javascript
+1) textfield property has events like
+		onchange, onfocus,onblur,onkeypress, onkeydown, onkeyup
+2) checkbox.checked returns true/false
+events like: onclick, onchange
+3) dropdown/select list property
+myselect.type, myselect.options[x].selected,myselect.selectedIndex
+events: onchange
+4) onsubmit

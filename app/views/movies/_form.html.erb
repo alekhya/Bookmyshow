@@ -1,4 +1,5 @@
 <%= form_for(@movie) do |f| %>
+  <div id="error_message"></div>
   <% if @movie.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
@@ -13,7 +14,7 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :name => "movie_name" %>
   </div>
   <div class="field">
     <%= f.label :stars %><br />

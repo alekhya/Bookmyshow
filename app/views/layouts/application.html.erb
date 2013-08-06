@@ -3,12 +3,12 @@
 <head>
   <title>Bookmyshow</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+ 
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div>
-<%= link_to image_tag("BMS_logo.png"), movies_path %>
+<%= link_to image_tag("BMS_logo.png"), movies_path, :id => "logo" %>
 </div>
 <div style="text-align:right">
 <% if user_signed_in? %>
@@ -23,4 +23,7 @@
 
 <%= yield %>
 </body>
+<%= javascript_include_tag "application" %>
+
 </html>
+
