@@ -1,0 +1,161 @@
+Javascript:
+1) onclick function
+	
+	var logo_image = document.getElementById("logo");
+	logo_image.onclick = function() {
+		alert("you clicked the image");
+	};
+
+2) onfocus and onblur
+	onfocus: getting into tab and onblur: leaving out of tab.
+	
+	var com = document.getElementById("comment");
+	com.onfocus = function() {
+		if (com.value == "Please enter comments") {
+			com.value = "";
+		}
+	}
+	com.onblur = function() {
+		if (com.value == "") {
+			com.value = "Please enter comments";
+		}
+	}
+
+3) Window.onload
+	window.onload {
+		function1();
+		function2();
+	}
+
+4) SetTimeout
+
+5) setInterval(changeimage,5000)
+
+	var event_image = document.getElementById("movies_list");
+	var event_image_array = ["/assets/conjuring.jpg", "/assets/smurfs.jpg", 	/assets/zambezia.jpg", "/assets/chennai_express.jpg"]
+	var index = 0;
+	function changeImage(){
+		event_image.setAttribute("src", event_image_array[index]);
+		index ++;
+		if (index >= event_image_array.length){
+			index=0;
+		}
+	}
+	setInterval(changeImage, 5000);
+
+5) clearInterval
+
+	var intervalhandler = setInterval(changeImage, 5000);
+	event_image.onclick = function(){
+		clearInterval(intervalhandler);
+	}
+
+Debugging
+	1) what kind of errors will face in javascript
+	2) Which browser will help us in debuging very well.
+	3) How to debug(like puting breakpoints/continue/step into/step out)
+
+Enhancing forms with javascript
+	1) textfield property has events like
+			onchange, onfocus,onblur,onkeypress, onkeydown, onkeyup
+	2) checkbox.checked returns true/false
+			events like: onclick, onchange
+	3) dropdown/select list property
+			myselect.type, myselect.options[x].selected,myselect.selectedIndex
+			events: onchange
+	4) onsubmit
+
+Prevent Submit
+	1) Preventing form from submiting if any validation fails
+	function preventEventHandler(){
+		// prevent form from submiting if no name for movie
+		document.getElementById("new_movie").onsubmit = function(){
+		if (document.getElementById("movie_name").value == "") {
+				document.getElementById("error_message").innerHTML= "Please provide movie name";
+				// to stop form from submiting
+				return false;
+			} else {
+				// reset and allow form from submiting
+				document.getElementById("error_message").innerHTML= "";
+				return true;
+			}
+		};
+	}
+	// when document loads
+	window.onload = function(){
+		preventEventHandler();
+	}
+
+Css and javascript
+	1) can use css class in javascript is same as css
+		but hypens is not accepted eg: background-color instead backgroundColor(refers as camelclass js treats - as minus)
+		document.getElementById("mainelement").onclick = function() {
+			// person clicks on the mainelement then what are the stylings defined in example class thats get executed.
+			but it can't override inline style defined in html.
+			if (document.getElementById("mainelement").className == "example") {
+				document.getElementById("mainelement").classname = "";
+			} else {
+				document.getElementById("mainelement").classname = "example";
+			}
+		};
+
+InlineStyle 
+	wrapping the image in the webpage, like scrolling from left to right
+	var intervalHandle;
+	var currentPos = 0;
+
+	function beginAnimate(){
+		document.getElementById("movies_list").style.position = "absolute";
+		document.getElementById("movies_list").style.left = "0px";
+		document.getElementById("movies_list").style.top = "100px";
+
+		intervalHandle = setInterval(animateBox, 50);
+	}
+
+	function animateBox(){
+		currentPos += 5;
+		document.getElementById("movies_list").style.left = currentPos + "px";
+		if (currentPos > 900) {
+			clearInterval(intervalHandle);
+			document.getElementById("movies_list").style.position = "";
+			document.getElementById("movies_list").style.left = "";
+			document.getElementById("movies_list").style.top = "";
+		}
+	}
+
+	window.onload = function() {
+		//a();
+		//preventEventHandler();
+		//c();
+		// do a single call to beginanimate fn in 5secs after page is loaded.
+		setTimeout(beginAnimate,5000);
+	}
+
+Guidelines to write javascript
+	1) use camelCase for variables, functions, and methods
+	2) Open curly brases for the same line
+	3) always use blocks even if it contains single statement
+	4) define function before u call them
+	5) always use var for declaraing variables, semicolons to end a statement
+
+Javascript Minification tool:
+	To minimise code we have many tools Jsmin, Google closure complier
+
+Code Quality Tool:
+	check all like syntax,spaces,elements naming conversion, it checks everything
+	for javascript we have JsLint as code quality tool 
+
+Javascript Libraries:
+	1) lightbox2
+	2) scriptaculo.us- web 2.0
+	3) moo.fx - size does matter
+	4) CurvyCorners - Beautiful round
+
+Linking into multiple files
+	1) js file will link sequentially not simultaneously.
+	2) each js file should contain simple code
+	3) more files more request to webserver which slowers our webpage
+	4) have FEW JS files as possible
+	5) Order is important
+			if we are using jquery library make sure that u load jquery library first and then use
+			

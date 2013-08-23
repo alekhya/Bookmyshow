@@ -1,0 +1,33 @@
+1) Download and add it to the html file
+2) jquery(selector)
+	Jquery does many things without using id by simly calling library functions
+3) Syntax: Jquery methods
+	jquery('what to find').someAction;
+	# -> represents ID 
+	. -> class
+	Some methods like .addclass, .removeclass, .toggleclass (which means if class is not their then add it if it is their then remove it.)
+4) Jquery is more about accurate, more flexible, more choices, can make our code shorter
+	Jquery represents in $ sign($ -> alias for jquery)
+	eg:
+	a) jQuery("li").addClass("highlight");
+	b) jquery("p:contains('packages')").addClass("highlight");
+	c) fadeOut
+		 $("p").click(function(){
+			$("this").fadeOut(2000);
+		 });
+	d) $(document).ready(function{
+		 $('#pageID').click(function(){
+	 		$('#pageID').text("the dom is fully loaded");
+	 	 	});
+	 	 });
+JQUERY EFFECTS
+http://www.w3schools.com/jquery
+1) hide/show
+2) fade
+3) slide
+4) animate
+5) stop : used to stop any animation, fading and including animation
+6) chaining: allows u to run multiple jquery commands one after the other
+7) 	get, set(playing important role) we can set values, text when event raised
+8) add
+	append(), prepend

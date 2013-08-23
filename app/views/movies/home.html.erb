@@ -1,8 +1,11 @@
-<h2 style="text-align:center">Welcome To Book my Show</h2>
+<h2 style="text-align:center" id="welcome">Welcome To Book my Show</h2>
 <%= link_to "Watch movies here ...", movies_path %><br/>
 <% if user_signed_in? %>
 	<%= link_to "Include new movies...", new_movie_path %>
 <% end %>
 <div>
     <%= image_tag "chennai_express.jpg", :id => "movies_list"%>
+    <p id="story_line" style="position:absolute;">
+    	`Milkha Singh` - for some the name evokes a faint memory from the pages of history. All, most remember is that Milkha Singh, hailed as the Flying Sikh, was a famous athlete, who infamously lost the penultimate race of his Life.
+	</p>
 </div>

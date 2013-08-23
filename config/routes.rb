@@ -1,6 +1,9 @@
 Bookmyshow::Application.routes.draw do
-  devise_for :users
+  
+ # devise_for :admins
+  mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
 
+  devise_for :users
   resources :reviews
 
 
