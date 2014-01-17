@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 gem 'devise'
 gem 'rails_admin'
+gem 'heroku'
 
 group :production do 
   gem 'pg'
