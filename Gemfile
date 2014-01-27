@@ -4,9 +4,8 @@ gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-group :development do
-  gem 'pg'
-end
+gem 'mysql2'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -25,11 +24,9 @@ gem 'devise'
 gem 'rails_admin'
 gem 'heroku'
 
-group :production do 
-  gem 'pg'
-  gem 'thin'
-  gem 'rails_12factor'
-end
+gem 'thin'
+gem 'rails_12factor'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
