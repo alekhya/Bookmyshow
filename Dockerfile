@@ -24,7 +24,7 @@
 #  docker hack/release.sh
 #
 
-FROM ubuntu
+FROM alekhya/ubuntu1
 
 # make sure the package repository is up to date
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
